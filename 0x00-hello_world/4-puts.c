@@ -1,11 +1,10 @@
 #include <stdio.h>
 /**
- * main method starts here
- *
- * with a zero return upon successful compilation
+ * using printf in themain method
+ * 0 if success on the return
  */
 int main(void)
 {
-	puts ("\"Programming is like building a multilingual puzzle");
-        return (0);
+puts("\"Programming is like building a multilingual puzzle");
+return (0);
 }
