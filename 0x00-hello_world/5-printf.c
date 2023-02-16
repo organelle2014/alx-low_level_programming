@@ -1,10 +1,7 @@
 #include<stdio.h>
-/*the header is above
- * the main functions is below
- * goal - to display a message
- */
-int main()
+/* the header is above */
+int main(void)
 {
-	printf("with proper grammar, but the outcome is a piece of art,\n");
-	return(0);
+	printf ("with proper grammar, but the outcome is a piece of art,\n");
+	return (0);
 }
