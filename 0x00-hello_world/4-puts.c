@@ -1,10 +1,11 @@
 #include<sdio.h>
 /**
  * main method starts here
- * the aim is to get an output
+ *
+ * with a zero return upon successful compilation
  */
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
-	return (0);
+        return (0);
 }
