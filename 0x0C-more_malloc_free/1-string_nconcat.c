@@ -1,31 +1,49 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stddef.h>
+#include <stdlib.h>
+
 /**
-  * _calloc - allocates memory of an array using malloc.
-  * @nmemb: number of elements in array.
-  * @size: size of elements of array.
-  *
-  * Return: NULL is size or nmemb == 0.
-  * NULL if malloc fails.
-  * Pointer to memory allocated if successful.
-  */
-void *_calloc(unsigned int nmemb, unsigned int size)
+* string_nconcat - a function that concatenates two strings.
+*
+* @s1: first char
+* @s2: secound char
+* @n: unsigned int
+*
+* Return: If the function fails, it should return NULL
+*/
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	void *p;
-	unsigned int i;
+   unsigned int x, y, z;
+   char *s;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	p = malloc(nmemb * size);
-	if (p == NULL)
-	{
-		return (NULL);
-	}
 
-	for (i = 0; i < (nmemb * size); i++)
-	{
-		*((char *)(p) + i) = 0;
-	}
-
-	return (p);
+   if (s1 == NULL)
+   {
+       x = 0;
+   }
+   else
+   {
+       for (x = 0; s1[x]; ++x)
+           ;
+   }
+   if (s2 == NULL)
+   {
+       y = 0;
+   }
+   else
+   {
+       for (y = 0; s2[y]; ++y)
+           ;
+   }
+   if (y > n)
+       y = n;
+   s = malloc(sizeof(char) * (x + y + 1));
+   if (s == NULL)
+       return (NULL);
+   for (z = 0; z < x; z++)
+       s[z] = s1[z];
+   for (z = 0; z < y; z++)
+       s[z + x] = s2[z];
+   s[x + y] = '\0';
+   return (s);
 }
