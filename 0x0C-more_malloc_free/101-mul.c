@@ -1,29 +1,43 @@
+#include <stdio.h>
 #include "main.h"
+
+
+int _isdigit(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		if (!(s[i] >= 0 && s[i] <= 9))
+		{
+			return (0);
+		}
+		s++;
+	}
+	return (1);
+}
+
 
 /**
  * main - multiplies two positive numbers
- * @argc: n arguments
- * @argv: args
- * Return: int
+ * @num1: the first number
+ * @num2: the second number
+ * Return: product num1 * num2
  */
-int main(int argc, char *argv[])
+long double main(int argc, char **argv)
 {
-unsigned long mul;
-int i, j;
-	if (argc != 3)
-	{ printf("Error\n");
-	exit(98); }
-	for (i = 1; i < argc; i++)
-	{
-		for (j = 0; argv[i][j] != '\0'; j++)
-		{
-			if (argv[i][j] > 57 || argv[i][j] < 48)
-			{  printf("Error\n");
-			exit(98); }
-		}
+	int i;
+	long double mul;
 
+	if (argc != 3)
+	{
+		printf("Error\n");
+		exit(98);
 	}
-	mul = atol(argv[1]) *  atol(argv[2]);
-	printf("%lu\n", mul);
-return (0);
+	if (_isdigit(argv[1]) == 0 || _isdigit(argv[2]) == 0)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	
 }
